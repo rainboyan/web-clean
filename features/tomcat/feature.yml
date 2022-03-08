@@ -1,0 +1,4 @@
+description: Adds support for Tomcat runtime to the project
+dependencies:
+    - scope: compile
+      coords: "org.springframework.boot:spring-boot-starter-tomcat"

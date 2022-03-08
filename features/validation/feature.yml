@@ -1,0 +1,4 @@
+description: Adds support for Validation to the project
+dependencies:
+    - scope: compile
+      coords: "org.springframework.boot:spring-boot-starter-validation"

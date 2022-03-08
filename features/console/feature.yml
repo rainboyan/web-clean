@@ -1,0 +1,4 @@
+description: Adds support for Console to the project
+dependencies:
+    - scope: console
+      coords: "org.grails:grails-console"

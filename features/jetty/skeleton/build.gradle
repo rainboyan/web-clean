@@ -1,0 +1,10 @@
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+        // Exclude from asset-pipeline-grails
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        exclude group: 'org.apache.tomcat.embed', module: 'tomcat-embed-core'
+    }
+}

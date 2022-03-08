@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        mavenCentral()
+        mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
     }
     dependencies {
@@ -15,11 +15,16 @@ apply plugin: "org.grails.internal.grails-profile-publish"
 group 'org.grails.profiles'
 version project.projectVersion
 
-grailsPublish {
-    userOrg = 'grails'
-    githubSlug = 'grails-profiles/base'
-    license = 'Apache-2.0'
-    title = "Grails Base Profile"
-    desc = "A profile for other profiles to extend from"
-    developers = [graemerocher:'Graeme Rocher']
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
 }
+
+grailsPublish {
+    userOrg = 'rainboyan'  
+    githubSlug = 'rainboyan/web-clean'
+    license = 'Apache-2.0'
+    title = "Grails Web Clean Profile"
+    desc = "A profile for Clean Web applications"
+    developers = [rainboyan:'Michael Yan']
+}    

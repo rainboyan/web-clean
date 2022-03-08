@@ -1,0 +1,6 @@
+description: Adds support for Logging to the project
+dependencies:
+    - scope: compile
+      coords: "org.springframework.boot:spring-boot-starter-logging"
+    - scope: compile
+      coords: "org.grails:grails-logging"
