@@ -1,0 +1,4 @@
+description: Adds PostgreSQL to the project
+dependencies:
+    - scope: compile
+      coords: 'org.postgresql:postgresql:42.3.3'
