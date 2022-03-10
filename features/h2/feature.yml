@@ -1,0 +1,4 @@
+description: Adds H2Database to the project
+dependencies:
+    - scope: compile
+      coords: 'com.h2database:h2'
