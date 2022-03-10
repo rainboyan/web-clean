@@ -29,9 +29,6 @@ spring:
                 - '**/*.gson'
                 - 'logback.groovy'
                 - '*.properties'
-management:
-    endpoints:
-        enabled-by-default: false
 
 ---
 grails:
