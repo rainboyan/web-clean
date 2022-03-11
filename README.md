@@ -1,6 +1,6 @@
 # Grails Web Profile
 
-A profile for creating Grails Clean web applications, support `Tomcat`, `Jetty`, `Undertow` embedded server, with more flexible and optional **Features**.
+A profile for creating Grails Clean web applications, support `Tomcat`, `Jetty`, `Undertow` embedded server, support database such as `h2`, `mysql`, `mariadb`, `postgres`, and with more flexible and optional **Features**.
 
 ## Grails Version
 
@@ -58,24 +58,30 @@ grails run-app
   - **asset-pipeline**
   - *async*
   - *cache*
+  - console
   - *database-migration*
   - *events*
   - *geb2*
   - **gsp**
-  - console
+  - h2
   - hibernate5
   - i18n
   - interceptors
+  - *jetty*
   - *json-views*
   - *less-asset-pipeline*
   - logging
+  - mariadb
   - *markup-views*
   - *mongodb*
   - *neo4j*
+  - *postgresql*
   - rest
   - *rx-mongodb*
   - scaffolding
   - testing
+  - tomcat
+  - *undertow*
   - validation
 
 ## Links
