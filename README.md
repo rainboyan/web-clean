@@ -1,14 +1,18 @@
 # Grails Web Profile
 
-A profile for creating Grails Clean web applications, support `Tomcat`, `Jetty`, `Undertow` embedded server, support database such as `h2`, `mysql`, `mariadb`, `postgres`, and with more flexible and optional **Features**.
+A profile for creating Grails web applications, support `Tomcat`, `Jetty`, `Undertow` embedded server, support database such as `h2`, `MySQL`, `MariaDB`, `PostgreSQL`, and with more flexible and optional **Features**.
 
-## Grails Version
+## Grails Stack
 
 - Grails **5.0.0**
+- Gradle **7.2**
+- Spring Framework **5.3.16**
+- Spring Boot **2.6.4**
+- Micronaut **3.4.0**
 
 ## Usage
 
-Grails `web-clean` profile based on `base` profile, unlike `web` profile, except support `Tomcat`, also support `Jetty`, `Undertow` embedded server, add more optional dependencies and features, such as `actuator`, `scaffolding`, `async`, `events`, `cache`, you can add later if needed.
+Grails `web-clean` profile based on `base` profile, unlike `web` profile, except support `Tomcat`, also support `Jetty`, `Undertow` embedded server, support database such as `h2`, `MySQL`, `MariaDB`, `PostgreSQL`, with more optional dependencies and features, such as `actuator`, `scaffolding`, `async`, `events`, `cache`, `json-views`, you can add later if needed.
 
 ### Build Profile
 
@@ -53,6 +57,13 @@ grails run-app
   - Tomcat
   - Jetty
   - Undertow
+* Support databases:
+  - h2
+  - mariadb
+  - mysql
+  - postgresql
+  - mongodb
+  - neo4j
 * Support individual and optional features:
   - actuator
   - **asset-pipeline**
@@ -63,25 +74,17 @@ grails run-app
   - *events*
   - *geb2*
   - **gsp**
-  - h2
   - hibernate5
   - i18n
   - interceptors
-  - *jetty*
   - *json-views*
   - *less-asset-pipeline*
   - logging
-  - mariadb
   - *markup-views*
-  - *mongodb*
-  - *neo4j*
-  - *postgresql*
   - rest
   - *rx-mongodb*
   - scaffolding
   - testing
-  - tomcat
-  - *undertow*
   - validation
 
 ## Links
