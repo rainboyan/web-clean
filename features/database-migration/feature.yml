@@ -1,5 +1,5 @@
 description: Adds support for Database Migration to the project
 dependencies:
     - scope: compile
-      coords: "org.grails.plugins:database-migration:4.0.0"
+      coords: "org.grails.plugins:database-migration:4.1.0"
         
