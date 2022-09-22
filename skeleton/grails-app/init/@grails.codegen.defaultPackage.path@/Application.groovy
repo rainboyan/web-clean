@@ -1,14 +1,15 @@
 package @grails.codegen.defaultPackage@
 
-import grails.boot.Grails
+import grails.boot.GrailsApp
+import grails.boot.config.GrailsAutoConfiguration
 
 import groovy.transform.CompileStatic
 
 @CompileStatic
-class Application {
+class Application extends GrailsAutoConfiguration {
 
     static void main(String[] args) {
-        Grails.run(Application, args)
+        GrailsApp.run(Application, args)
     }
 
 }
