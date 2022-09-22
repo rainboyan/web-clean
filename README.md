@@ -27,7 +27,7 @@ cd web-clean
 #### Use Tomcat with default features
 
 ```
-grails create-app --profile org.grails.profiles:web-clean:5.0.0-SNAPSHOT org.grails.demo.web-clean-demo
+grails create-app --profile org.grails.profiles:web-clean:5.0.0 org.grails.demo.web-clean-demo
 cd web-clean-demo
 grails run-app
 ```
@@ -35,7 +35,7 @@ grails run-app
 #### Use Jetty
 
 ```
-grails create-app --profile org.grails.profiles:web-clean:5.0.0-SNAPSHOT --features actuator,console,hibernate5,i18n,interceptors,logging,rest,scaffolding,testing,validation,jetty org.grails.demo.web-clean-demo
+grails create-app --profile org.grails.profiles:web-clean:5.0.0 --features actuator,console,hibernate5,i18n,interceptors,logging,rest,scaffolding,testing,validation,jetty org.grails.demo.web-clean-demo
 cd web-clean-demo
 grails run-app
 ```
@@ -43,16 +43,17 @@ grails run-app
 #### Use Undertow
 
 ```
-grails create-app --profile org.grails.profiles:web-clean:5.0.0-SNAPSHOT --features actuator,console,hibernate5,i18n,interceptors,logging,rest,scaffolding,testing,validation,undertow org.grails.demo.web-clean-demo
+grails create-app --profile org.grails.profiles:web-clean:5.0.0 --features actuator,console,hibernate5,i18n,interceptors,logging,rest,scaffolding,testing,validation,undertow org.grails.demo.web-clean-demo
 cd web-clean-demo
 grails run-app
 ```
 
 ## What's New
 
-### 5.0.0-SNAPSHOT
+### 5.0.0
 
 * Update Grails 5.0
+* More improvements and bug fixes
 * Provider embedded servlet server:
   - Tomcat
   - Jetty
