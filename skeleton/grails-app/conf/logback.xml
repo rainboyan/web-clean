@@ -14,4 +14,6 @@
     <root level="info">
         <appender-ref ref="STDOUT" />
     </root>
+    <logger name="grails.boot" level="debug" />
+    <logger name="@grails.app.group@" level="debug" />
 </configuration>

@@ -26,6 +26,7 @@ build:
     repositories:
         - "mavenLocal()"
         - "https://repo.grails.org/grails/core"
+        - "https://repo.gradle.org/gradle/libs-releases"
     plugins:
         - eclipse
         - idea
@@ -33,15 +34,25 @@ build:
         - org.grails.grails-web
 dependencies:
     - scope: build
-      coords: "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
+      coords: "org.grails:grails-gradle-plugin:$grailsVersion"
     - scope: compile
       coords: "org.springframework.boot:spring-boot-autoconfigure"
     - scope: compile
+      coords: "org.grails:grails-boot"
+    - scope: compile
       coords: "org.grails:grails-core"
     - scope: compile
-      coords: "org.grails:grails-web-boot"
+      coords: "org.grails:grails-logging"
+    - scope: compile
+      coords: "org.grails:grails-plugin-controllers"
+    - scope: compile
+      coords: "org.grails:grails-plugin-converters"
     - scope: compile
       coords: "org.grails:grails-plugin-databinding"
+    - scope: compile
+      coords: "org.grails:grails-plugin-datasource"
+    - scope: compile
+      coords: "org.grails:grails-plugin-domain-class"
     - scope: compile
       coords: "org.grails:grails-plugin-services"
     - scope: compile
