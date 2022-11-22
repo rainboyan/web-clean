@@ -1,10 +1,6 @@
 description: Adds support for Testing to the project
 dependencies:
     - scope: testCompile
-      coords: "io.micronaut:micronaut-inject-groovy"
-    - scope: testCompile
-      coords: "org.grails:grails-gorm-testing-support"
+      coords: "org.grails:grails-test-support"
     - scope: testCompile
       coords: "org.mockito:mockito-core"
-    - scope: testCompile
-      coords: "org.grails:grails-web-testing-support"
