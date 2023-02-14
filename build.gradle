@@ -10,6 +10,7 @@ buildscript {
 }
 
 apply plugin: "idea"
+apply plugin: "groovy"
 apply plugin: "org.grails.grails-profile"
 apply plugin: "org.grails.internal.grails-profile-publish"
 
