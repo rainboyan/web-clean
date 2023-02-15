@@ -54,6 +54,12 @@ dependencies:
     - scope: compile
       coords: "org.grails:grails-plugin-domain-class"
     - scope: compile
+      coords: "org.grails:grails-plugin-i18n"
+    - scope: compile
+      coords: "org.grails:grails-plugin-interceptors"
+    - scope: compile
+      coords: "org.grails:grails-plugin-rest"
+    - scope: compile
       coords: "org.grails:grails-plugin-services"
     - scope: compile
       coords: "org.grails:grails-plugin-url-mappings"
