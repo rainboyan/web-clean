@@ -4,5 +4,5 @@ build:
         - org.grails.grails-gsp
 dependencies:
     - scope: compile
-      coords: "org.grails.plugins:gsp"
-        
+      coords: "org.grails:grails-plugin-gsp"
+

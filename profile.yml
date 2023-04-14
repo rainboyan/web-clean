@@ -17,14 +17,11 @@ features:
         - tomcat
         - validation
     required:
-        - gsp
         - asset-pipeline
 repositories:
-    - "mavenLocal()"
     - "https://repo.grails.org/grails/core"
 build:
     repositories:
-        - "mavenLocal()"
         - "https://repo.grails.org/grails/core"
         - "https://repo.gradle.org/gradle/libs-releases"
     plugins:
@@ -54,9 +51,13 @@ dependencies:
     - scope: compile
       coords: "org.grails:grails-plugin-domain-class"
     - scope: compile
+      coords: "org.grails:grails-plugin-gsp"
+    - scope: compile
       coords: "org.grails:grails-plugin-i18n"
     - scope: compile
       coords: "org.grails:grails-plugin-interceptors"
+    - scope: compile
+      coords: "org.grails:grails-plugin-management"
     - scope: compile
       coords: "org.grails:grails-plugin-rest"
     - scope: compile
