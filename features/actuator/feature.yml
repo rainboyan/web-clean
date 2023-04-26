@@ -2,3 +2,5 @@ description: Adds support for Actuator to the project
 dependencies:
     - scope: compile
       coords: "org.springframework.boot:spring-boot-starter-actuator"
+    - scope: compile
+      coords: "org.grails:grails-plugin-management"
