@@ -4,6 +4,7 @@ skeleton:
     binaryExtensions: ['png', 'gif', 'jpg', 'jpeg', 'ico', 'icns', 'pdf', 'zip', 'jar', 'class', 'woff', 'woff2']
 features:
     defaults:
+        - asset-pipeline
         - actuator
         - console
         - hibernate5
@@ -16,18 +17,21 @@ features:
         - testing
         - tomcat
         - validation
-    required:
-        - asset-pipeline
 repositories:
+    - "mavenLocal()"
+    - "mavenCentral()"
     - "https://repo.grails.org/grails/core"
 build:
     repositories:
+        - "mavenLocal()"
+        - "mavenCentral()"
         - "https://repo.grails.org/grails/core"
         - "https://repo.gradle.org/gradle/libs-releases"
     plugins:
         - eclipse
         - idea
         - war
+        - java-library
         - org.grails.grails-web
 dependencies:
     - scope: build
