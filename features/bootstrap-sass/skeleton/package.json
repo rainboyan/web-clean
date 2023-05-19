@@ -1,0 +1,58 @@
+{
+  "name": "grails-bootstrap-sass",
+  "version": "2022.0.0",
+  "private": true,
+  "description": "Grails with npm to building a Bootstrap powered web site.",
+  "author": "rain",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainboyan/web-bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rainboyan/web-bootstrap/issues"
+  },
+  "homepage": "https://github.com/rainboyan/web-bootstrap#readme",
+  "scripts": {
+    "build": "npm run css",
+    "css-compile": "./node_modules/.bin/sass --style expanded --source-map --embed-sources --no-error-css --load-path=node_modules grails-app/assets/scss/:grails-app/assets/stylesheets/",
+    "css-lint": "stylelint grails-app/assets/scss/",
+    "css-prefix": "postcss --replace grails-app/assets/stylesheets/bootstrap.css --use autoprefixer --map",
+    "css": "npm-run-all css-compile css-prefix",
+    "server": "grails run-app",
+    "start": "npm-run-all --parallel watch server",
+    "watch": "nodemon -e grails-app/assets/scss -x \"npm run css\"",
+    "test": "npm run css-lint && npm run css",
+    "copy-jquery": "cp node_modules/jquery/dist/jquery* grails-app/assets/javascripts/",
+    "copy-popper": "cp node_modules/popper.js/dist/popper.js node_modules/popper.js/dist/popper.min.js grails-app/assets/javascripts/",
+    "copy-bootstrap-icon": "cp -R node_modules/bootstrap-icons/font/fonts/ grails-app/assets/fonts",
+    "copy-bootstrap": "cp node_modules/bootstrap/dist/js/bootstrap* grails-app/assets/javascripts/",
+    "copy-bs-custom-file-input": "cp node_modules/bs-custom-file-input/dist/bs-custom-file-input* grails-app/assets/javascripts/",
+    "postinstall": "npm-run-all copy-bootstrap-icon copy-bootstrap copy-bs-custom-file-input"
+  },
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "css",
+    "javascript",
+    "starter",
+    "template"
+  ],
+  "dependencies": {
+    "@popperjs/core": "^2.11.4",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.1",
+    "bs-custom-file-input": "^1.3.4",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.8",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.9",
+    "stylelint": "^14.2.0",
+    "stylelint-config-twbs-bootstrap": "^3.0.1"
+  }
+}
