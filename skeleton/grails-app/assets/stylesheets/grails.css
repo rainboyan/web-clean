@@ -1,0 +1,99 @@
+html, body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    color: #343437;
+    line-height: 25px;
+    font-weight: normal;
+    font-size: 14px;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
+}
+
+p {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.125em;
+}
+
+h2 {
+    font-size: 1.6875em;
+}
+
+h3 {
+    font-size: 1.375em;
+}
+
+h4 {
+    font-size: 1.125em;
+}
+
+h5 {
+    font-size: 1.125em;
+    color: #2559a7;
+}
+
+h6 {
+    font-size: 1.08em;
+    font-weight: normal;
+    color: #2559a7;
+}
+
+a {
+    color: #2559a7;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #2559a7;
+    text-decoration: none
+}
+
+#content {
+    margin: 2em 0;
+    padding: 1em 0;
+    background: white;
+}
+
+#content h1 {
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 200;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#content h2 {
+    font-size: 1.25em;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+#content p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    color: #222;
+    font-size: 15px;
+}
+
+.centered {
+    text-align: center;
+}
