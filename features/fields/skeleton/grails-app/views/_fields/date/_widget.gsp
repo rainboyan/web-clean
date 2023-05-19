@@ -1,4 +1,7 @@
+<div class="hstack gap-3">
 <g:datePicker name="${property}" value="${value ?: new Date()}"
               precision="${attrs.precision}"
-              cssClasses="[year: 'form-control custom-select col-2', 'month': 'form-control custom-select col-2', 'day': 'form-control custom-select col-2', 'hour': 'form-control custom-select col-1', 'minute': 'form-control custom-select col-1']"
+              years="${constraints.range}"
+              cssClasses="[year: 'form-select w-15', 'month': 'form-select w-15', 'day': 'form-select w-15', 'hour': 'form-select w-10', 'minute': 'form-select w-10']"
               noSelection="['':'-Choose-']"/>
+</div>
