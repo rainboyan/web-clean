@@ -23,12 +23,12 @@ spring:
     devtools:
         restart:
             additional-exclude:
-                - '*.gsp'
                 - '**/*.gsp'
-                - '*.gson'
                 - '**/*.gson'
-                - 'logback.groovy'
-                - '*.properties'
+                - 'application.groovy'
+                - 'spring/resources.groovy'
+                - 'spring/resources.xml'
+                - 'messages*.properties'
 
 ---
 grails:
