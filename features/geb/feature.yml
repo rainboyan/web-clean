@@ -1,0 +1,19 @@
+description: Adds Geb, WebDriver 4.x and Webdriver binaries Gradle Plugin dependencies to run functional tests.
+build:
+    plugins:
+        - com.github.erdi.webdriver-binaries
+dependencies:
+    - scope: build
+      coords: com.github.erdi:webdriver-binaries-gradle-plugin:3.2
+    - scope: testCompile
+      coords: org.grails.plugins:geb
+    - scope: testCompile
+      coords: org.seleniumhq.selenium:selenium-remote-driver:4.11.0
+    - scope: testCompile
+      coords: org.seleniumhq.selenium:selenium-api:4.11.0
+    - scope: testCompile
+      coords: org.seleniumhq.selenium:selenium-support:4.11.0
+    - scope: testRuntime
+      coords: org.seleniumhq.selenium:selenium-chrome-driver:4.11.0
+    - scope: testRuntime
+      coords: org.seleniumhq.selenium:selenium-firefox-driver:4.11.0
