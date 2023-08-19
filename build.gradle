@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation "org.codehaus.groovy:groovy:$groovyVersion"
+    implementation "org.apache.groovy:groovy:$groovyVersion"
 }
 
 grailsPublish {
