@@ -1,4 +1,4 @@
 description: Adds MySQL to the project
 dependencies:
     - scope: compile
-      coords: 'com.mysql:mysql-connector-j:8.0.33'
+      coords: 'com.mysql:mysql-connector-j:8.1.0'
