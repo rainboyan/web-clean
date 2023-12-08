@@ -1,4 +1,4 @@
 description: Adds support for Scaffolding to the project
 dependencies:
     - scope: compile
-      coords: "org.grails.plugins:scaffolding"
+      coords: "org.grails:grails-plugin-scaffolding"
