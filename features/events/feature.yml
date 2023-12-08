@@ -1,5 +1,5 @@
 description: Adds support for the Grails EventBus abstraction
 dependencies:
     - scope: compile
-      coords: "org.grails.plugins:events"
+      coords: "org.grails:grails-plugin-events"
         

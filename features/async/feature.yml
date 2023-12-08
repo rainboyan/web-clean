@@ -1,4 +1,4 @@
 description: Adds support for Async to the project
 dependencies:
     - scope: compile
-      coords: "org.grails.plugins:async"
+      coords: "org.grails:grails-plugin-async"
