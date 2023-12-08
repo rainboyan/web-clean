@@ -45,7 +45,7 @@ jar {
     manifest.mainAttributes(
         "Built-By": System.properties['user.name'],
         "Created-By": System.properties['java.vm.version'] + " (" + System.properties['java.vm.vendor'] + ")",
-        "Implementation-Title": "Grails Web Bootstrap Profile",
+        "Implementation-Title": "Grails Web Clean Profile",
         "Implementation-Version": project.version,
         "Implementation-Vendor": 'grails.org')
 }
@@ -54,15 +54,15 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = project.group
-            artifactId = 'web-bootstrap'
+            artifactId = 'web-clean'
             version = project.version
 
             from components.java
 
             pom {
-                name = "Grails Web Bootstrap Profile"
-                description = "A Grails profile for creating Grails web application with Bootstrap."
-                url = 'https://github.com/rainboyan/web-bootstrap'
+                name = "Grails Web Clean Profile"
+                description = "A Grails profile for creating Grails web application with more flexible and optional features."
+                url = 'https://github.com/rainboyan/web-clean'
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
@@ -77,9 +77,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = 'scm:git:git://github.com/rainboyan/web-bootstrap.git'
-                    developerConnection = 'scm:git:ssh://github.com:rainboyan/web-bootstrap.git'
-                    url = 'https://github.com/rainboyan/web-bootstrap/tree/2022.0.x'
+                    connection = 'scm:git:git://github.com/rainboyan/web-clean.git'
+                    developerConnection = 'scm:git:ssh://github.com:rainboyan/web-clean.git'
+                    url = 'https://github.com/rainboyan/web-clean/tree/2022.0.x'
                 }
                 withXml { xml ->
                     def root = xml.asNode()
