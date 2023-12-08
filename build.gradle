@@ -6,6 +6,7 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "io.github.gradle-nexus:publish-plugin:1.3.0"
     }
 }
 
@@ -14,28 +15,106 @@ ext."signing.password" = project.hasProperty("signing.password") ? project.getPr
 ext."signing.secretKeyRingFile" = project.hasProperty("signing.secretKeyRingFile") ? project.getProperty('signing.secretKeyRingFile') : ("${System.properties['user.home']}${File.separator}.gnupg${File.separator}secring.gpg")
 ext.isReleaseVersion = !projectVersion.endsWith("SNAPSHOT")
 
+version projectVersion
+group 'org.grails.profiles'
+
+apply plugin: "eclipse"
 apply plugin: "idea"
 apply plugin: "groovy"
 apply plugin: "org.grails.grails-profile"
-apply plugin: "org.grails.internal.grails-profile-publish"
-
-group 'org.grails.profiles'
-version project.projectVersion
+apply plugin: "io.github.gradle-nexus.publish-plugin"
+apply plugin: "maven-publish"
+apply plugin: "signing"
 
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
 }
 
-dependencies {
-    implementation "org.apache.groovy:groovy:$groovyVersion"
+tasks.withType(Sign) {
+   onlyIf { isReleaseVersion }
 }
 
-grailsPublish {
-    userOrg = 'rainboyan'  
-    githubSlug = 'rainboyan/web-clean'
-    license = 'Apache-2.0'
-    title = "Grails Web Clean Profile"
-    desc = "A profile for Clean Web applications"
-    developers = [rainboyan:'Michael Yan']
-}    
+tasks.withType(GroovyCompile) {
+    configure(groovyOptions) {
+        forkOptions.jvmArgs = ['-Xmx1024m']
+    }
+}
+
+jar {
+    manifest.mainAttributes(
+        "Built-By": System.properties['user.name'],
+        "Created-By": System.properties['java.vm.version'] + " (" + System.properties['java.vm.vendor'] + ")",
+        "Implementation-Title": "Grails Web Bootstrap Profile",
+        "Implementation-Version": project.version,
+        "Implementation-Vendor": 'grails.org')
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = 'web-bootstrap'
+            version = project.version
+
+            from components.java
+
+            pom {
+                name = "Grails Web Bootstrap Profile"
+                description = "A Grails profile for creating Grails web application with Bootstrap."
+                url = 'https://github.com/rainboyan/web-bootstrap'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'rainboyan'
+                        name = 'Michael Yan'
+                        email = 'rain@rainboyan.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/rainboyan/web-bootstrap.git'
+                    developerConnection = 'scm:git:ssh://github.com:rainboyan/web-bootstrap.git'
+                    url = 'https://github.com/rainboyan/web-bootstrap/tree/2022.0.x'
+                }
+                withXml { xml ->
+                    def root = xml.asNode()
+                    def dependencies = root.appendNode('dependencies')
+                    project.configurations.profile.dependencies.each {
+                        def dependency = dependencies.appendNode('dependency')
+                        dependency.appendNode('groupId', it.group)
+                        dependency.appendNode('artifactId', it.name)
+                        dependency.appendNode('version', it.version)
+                        dependency.appendNode('scope', 'profile')
+                    }
+                }
+            }
+        }
+    }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            def ossUser = System.getenv("SONATYPE_USERNAME") ?: project.hasProperty("sonatypeOssUsername") ? project.sonatypeOssUsername : ''
+            def ossPass = System.getenv("SONATYPE_PASSWORD") ?: project.hasProperty("sonatypeOssPassword") ? project.sonatypeOssPassword : ''
+            def ossStagingProfileId = System.getenv("SONATYPE_STAGING_PROFILE_ID") ?: project.hasProperty("sonatypeOssStagingProfileId") ? project.sonatypeOssStagingProfileId : ''
+            nexusUrl = uri("https://s01.oss.sonatype.org/service/local/")
+            snapshotRepositoryUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            username = ossUser
+            password = ossPass
+            stagingProfileId = ossStagingProfileId
+        }
+    }
+}
+
+afterEvaluate {
+    signing {
+        required { isReleaseVersion && gradle.taskGraph.hasTask("publish") }
+        sign publishing.publications.maven
+    }
+}
