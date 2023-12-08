@@ -68,5 +68,3 @@ dependencies:
       coords: "org.grails:grails-plugin-services"
     - scope: compile
       coords: "org.grails:grails-plugin-url-mappings"
-    - scope: compileOnly
-      coords: "io.micronaut:micronaut-inject-groovy"
